@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Engage Partners</title>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #444;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* SCROLL PROGRESS BAR */
+        .scroll-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #36DB64, #052759);
+            z-index: 9999;
+            transform-origin: left;
+        }
+
+        /* FADE UP ANIMATION */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* HERO SECTION */
+        .team-hero {
+            background: #052759;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            margin-top: 68px;
+        }
+
+        .team-hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 160px 60px 100px;
+            text-align: center;
+        }
+
+        .team-hero-label {
+            color: #36DB64;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .team-hero-title {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.05;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* MAGIC TEXT SECTION */
+        .magic-text-section {
+            background: white;
+            padding: 120px 60px;
+            position: relative;
+        }
+
+        #magic-text-container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        /* HOW ARE WE SUCCESSFUL SECTION */
+        .team-approach {
+            background: white;
+            padding: 100px 60px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-label {
+            color: #36DB64;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 700;
+            color: #052759;
+            margin-top: 0.75rem;
+        }
+
+        .cards-grid {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .approach-card {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid #eee;
+            overflow: hidden;
+            flex: 1;
+            min-width: 260px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .approach-card:nth-child(1) {
+            transition-delay: 0s;
+        }
+
+        .approach-card:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .approach-card:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(5, 39, 89, 0.1);
+        }
+
+        .card-top-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .approach-card:nth-child(1) .card-top-bar {
+            background: #052759;
+        }
+
+        .approach-card:nth-child(2) .card-top-bar {
+            background: #36DB64;
+        }
+
+        .approach-card:nth-child(3) .card-top-bar {
+            background: linear-gradient(90deg, #052759, #36DB64);
+        }
+
+        .card-number {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 5rem;
+            font-weight: 900;
+            color: rgba(5, 39, 89, 0.05);
+            line-height: 1;
+            user-select: none;
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .approach-card:nth-child(1) .card-icon {
+            background: rgba(5, 39, 89, 0.08);
+            color: #052759;
+        }
+
+        .approach-card:nth-child(2) .card-icon {
+            background: rgba(54, 219, 100, 0.12);
+            color: #2ab854;
+        }
+
+        .approach-card:nth-child(3) .card-icon {
+            background: rgba(5, 39, 89, 0.08);
+            color: #052759;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #052759;
+            margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-body {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            color: #555;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* OUR TEAM SECTION */
+        .team-section {
+            background: #f8f9fb;
+            padding: 100px 60px;
+        }
+
+        .team-subtext {
+            margin-top: 1rem;
+            color: #666;
+            font-size: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .team-group {
+            margin-top: 3.5rem;
+        }
+
+        .team-group-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .group-bar {
+            width: 4px;
+            height: 28px;
+            border-radius: 2px;
+            background: #36DB64;
+            flex-shrink: 0;
+        }
+
+        .group-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(5, 39, 89, 0.5);
+        }
+
+        .group-line {
+            flex: 1;
+            height: 1px;
+            background: #e5e7eb;
+        }
+
+        .team-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.8rem;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 20px rgba(5, 39, 89, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(5, 39, 89, 0.12);
+        }
+
+        .team-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: white;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #052759 0%, #0a4a8a 100%);
+        }
+
+        .team-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #052759;
+            margin-bottom: 0.2rem;
+        }
+
+        .team-role {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #36DB64;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .team-specialties {
+            font-size: 0.78rem;
+            color: #888;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .team-email {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: #052759;
+            text-decoration: none;
+            margin-top: auto;
+            padding-top: 0.75rem;
+            border-top: 1px solid #f0f0f0;
+            transition: color 0.2s ease;
+        }
+
+        .team-email:hover {
+            color: #36DB64;
+        }
+
+        .team-email svg {
+            flex-shrink: 0;
+        }
+
+        /* BECOME A RECRUITER SECTION */
+        .recruiter-section {
+            background: #052759;
+            padding: 0;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+
+        @media (max-width: 900px) {
+            .recruiter-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .recruiter-content {
+            background: #052759;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .recruiter-label {
+            color: #36DB64;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        .recruiter-title {
+            font-size: clamp(1.8rem, 3.5vw, 3rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .recruiter-text {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            max-width: 420px;
+        }
+
+        .recruiter-button {
+            display: inline-block;
+            background: #36DB64;
+            color: #052759;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .recruiter-button:hover {
+            background: #2bc957;
+            transform: translateY(-2px);
+        }
+
+        .recruiter-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .recruiter-stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recruiter-stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #36DB64;
+        }
+
+        .recruiter-stat-label {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 2px;
+        }
+
+        .recruiter-video-side {
+            position: relative;
+            background: #041e42;
+            display: flex;
+            align-items: stretch;
+            overflow: hidden;
+            min-height: 500px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #video-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        #play-btn-circle {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        #play-btn-circle:hover {
+            background: rgba(54, 219, 100, 0.9);
+            border-color: #36DB64;
+        }
+
+        #sound-btn {
+            position: absolute;
+            bottom: 1.2rem;
+            right: 1.2rem;
+            z-index: 11;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            padding-top: 56.25%;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .recruiter-subtext {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #041e42;
+            color: white;
+            padding: 80px 60px 0 60px;
+        }
+
+        .footer-top {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-column a,
+        .footer-column p {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.55);
+            padding: 0.35rem 0;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            line-height: 1.9;
+        }
+
+        .footer-column.locations {
+            font-size: 0.82rem;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-wordmark {
+            font-size: clamp(100px, 18vw, 220px);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: transparent;
+            -webkit-text-stroke: 2px #36DB64;
+            display: block;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            margin: 60px 0;
+            line-height: 1;
+            animation: neonPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes neonPulse {
+            0%, 100% {
+                -webkit-text-stroke-color: #36DB64;
+                filter: drop-shadow(0 0 8px rgba(54,219,100,0.8)) drop-shadow(0 0 20px rgba(54,219,100,0.5)) drop-shadow(0 0 40px rgba(54,219,100,0.3));
+                opacity: 1;
+            }
+            50% {
+                -webkit-text-stroke-color: #2bc957;
+                filter: drop-shadow(0 0 12px rgba(54,219,100,1)) drop-shadow(0 0 30px rgba(54,219,100,0.8)) drop-shadow(0 0 60px rgba(54,219,100,0.5));
+                opacity: 0.95;
+            }
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-bottom-right {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.55);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            min-height: 42px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-shrink: 0;
+            padding: 0;
+            line-height: 1;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .social-icon:hover {
+            border-color: #36DB64;
+            color: #36DB64;
+        }
+
+        .social-icon svg {
+            display: block;
+            flex-shrink: 0;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 3rem;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            transition: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #nav-logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        #nav-logo-img {
+            height: 36px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        #nav-logo-text {
+            display: none;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        #nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 0;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 0.5rem 1rem;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.15) !important;
+            border-radius: 50px;
+        }
+
+        nav.scrolled .nav-link:hover {
+            background: rgba(5,39,89,0.08) !important;
+        }
+
+        .nav-link-active {
+            font-weight: 700;
+        }
+
+        #specialties-dropdown,
+        #services-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0a1628;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            z-index: 1001;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        #specialties-dropdown {
+            min-width: 520px;
+        }
+
+        #services-dropdown {
+            min-width: 320px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 68px;
+            }
+
+            .team-hero {
+                padding: 100px 30px 60px;
+            }
+
+            .team-approach,
+            .team-section,
+            .recruiter-section {
+                padding: 60px 30px;
+            }
+
+            footer {
+                padding: 60px 30px 0 30px;
+            }
+
+            .cards-grid {
+                flex-direction: column;
+            }
+
+            .team-cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-container {
+                margin: 0 auto 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="scroll-progress-bar"></div>
+
+<nav id="main-nav" style="position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 3rem;height:68px;display:flex;align-items:center;justify-content:space-between;background:transparent;transition:none;">
+
+  <!-- Logo -->
+  <a href="engage-final.html" id="nav-logo-link" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;">
+    <img id="nav-logo-img" src="https://image2url.com/r2/default/images/1775503403309-5487f9c8-0935-449c-9151-c934c25adc86.png" alt="Engage Partners" style="height:40px;width:auto;display:block;object-fit:contain;filter:none;">
+  </a>
+
+  <!-- Center nav -->
+  <ul id="nav-links-pill" style="background:rgba(0,0,0,0.18);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:50px;padding:4px 6px;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;gap:0;list-style:none;margin:0;transition:background 0.2s ease,border-color 0.2s ease;">
+
+    <!-- Team -->
+    <li style="position:relative;">
+      <a href="team.html" class="nav-link nav-link-active" style="display:flex;align-items:center;gap:4px;padding:0.45rem 1rem;font-size:0.92rem;font-weight:500;color:white;text-decoration:none;white-space:nowrap;background:transparent;border:none;cursor:pointer;transition:background 0.2s ease,color 0.2s ease;border-radius:50px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">Team</a>
+    </li>
+
+    <!-- Specialties with dropdown -->
+    <li style="position:relative;" id="specialties-menu-item">
+      <button id="specialties-trigger" class="nav-link" style="display:flex;align-items:center;gap:4px;padding:0.45rem 1rem;font-size:0.92rem;font-weight:500;color:white;background:transparent;border:none;cursor:pointer;white-space:nowrap;transition:background 0.2s ease,color 0.2s ease;border-radius:50px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">
+        Specialties
+        <svg id="specialties-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14" style="transition:transform 0.3s ease;flex-shrink:0;">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <!-- Specialties Dropdown -->
+      <div id="specialties-dropdown" style="display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#0a1628;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.5rem;min-width:520px;z-index:1001;box-shadow:0 20px 60px rgba(0,0,0,0.4);">
+        <p style="color:rgba(255,255,255,0.45);font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin:0 0 1rem 0;">Our 12 Specialty Areas</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;">
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Administrative
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Biotechnology
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Digital Marketing
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Engineering & Automation
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Finance & Accounting
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Food Service Equipment
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Giving & Philanthropy
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Healthcare
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Healthcare IT
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Information Technology
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Sales & Marketing
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>340B
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <!-- Services with dropdown -->
+    <li style="position:relative;" id="services-menu-item">
+      <button id="services-trigger" class="nav-link" style="display:flex;align-items:center;gap:4px;padding:0.45rem 1rem;font-size:0.92rem;font-weight:500;color:white;background:transparent;border:none;cursor:pointer;white-space:nowrap;transition:background 0.2s ease,color 0.2s ease;border-radius:50px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">
+        Services
+        <svg id="services-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14" style="transition:transform 0.3s ease;flex-shrink:0;">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <!-- Services Dropdown -->
+      <div id="services-dropdown" style="display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#0a1628;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.5rem;min-width:320px;z-index:1001;box-shadow:0 20px 60px rgba(0,0,0,0.4);">
+        <p style="color:rgba(255,255,255,0.45);font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin:0 0 1rem 0;">What We Offer</p>
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <a href="#services" style="display:flex;align-items:flex-start;gap:12px;padding:0.75rem;border-radius:10px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(54,219,100,0.15);border:1px solid rgba(54,219,100,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#36DB64" stroke-width="2" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div>
+              <p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 3px 0;">Strategic Solutions</p>
+              <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin:0;line-height:1.4;">Executive search and retained recruiting</p>
+            </div>
+          </a>
+          <a href="#services" style="display:flex;align-items:flex-start;gap:12px;padding:0.75rem;border-radius:10px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(54,219,100,0.15);border:1px solid rgba(54,219,100,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#36DB64" stroke-width="2" width="16" height="16"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <div>
+              <p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 3px 0;">Transition & Implementation</p>
+              <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin:0;line-height:1.4;">Workforce transitions and project staffing</p>
+            </div>
+          </a>
+          <a href="#services" style="display:flex;align-items:flex-start;gap:12px;padding:0.75rem;border-radius:10px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(54,219,100,0.15);border:1px solid rgba(54,219,100,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#36DB64" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div>
+              <p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 3px 0;">Support Services</p>
+              <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin:0;line-height:1.4;">Temp, contract, and direct hire placement</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <!-- Blog -->
+    <li style="position:relative;">
+      <a href="blog.html" class="nav-link" style="display:flex;align-items:center;gap:4px;padding:0.45rem 1rem;font-size:0.92rem;font-weight:500;color:white;text-decoration:none;white-space:nowrap;background:transparent;border:none;cursor:pointer;transition:background 0.2s ease,color 0.2s ease;border-radius:50px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">Blog</a>
+    </li>
+
+    <!-- Contact -->
+    <li style="position:relative;">
+      <a href="engage-final.html#contact" class="nav-link" style="display:flex;align-items:center;gap:4px;padding:0.45rem 1rem;font-size:0.92rem;font-weight:500;color:white;text-decoration:none;white-space:nowrap;background:transparent;border:none;cursor:pointer;transition:background 0.2s ease,color 0.2s ease;border-radius:50px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">Contact</a>
+    </li>
+
+  </ul>
+
+  <!-- Right side buttons -->
+  <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+    <a href="https://employee.engagestaff.com/bullhorn/#/" target="_blank" style="background:#36DB64;color:#052759;padding:0.6rem 1.4rem;border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;white-space:nowrap;border:none;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">Find a Job</a>
+    <a href="engage-final.html" id="hire-btn" style="background:#052759;color:white;padding:0.6rem 1.4rem;border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;white-space:nowrap;border:2px solid #052759;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">Hire a Candidate</a>
+  </div>
+
+</nav>
+
+<!-- SECTION 1: HERO -->
+<section class="team-hero">
+    <div class="team-hero-inner">
+        <span class="team-hero-label">OUR TEAM</span>
+        <h1 class="team-hero-title">We Are Defining a New Culture of Hiring.</h1>
+    </div>
+</section>
+
+<!-- SECTION 2: MAGIC TEXT REVEAL -->
+<section class="magic-text-section">
+    <div id="magic-text-container" style="display:flex;flex-wrap:wrap;gap:0 6px;line-height:1.7;padding:1rem 0;">
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">Recruitment</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">is</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">more</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">than</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">a</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">process</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">of</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">streamlined</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">hiring</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">strategies</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">and</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">impressive</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">technology</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">to</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">help</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">us</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">be</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">more</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">efficient</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">in</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">our</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">work.</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">Our</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">team</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">of</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">strong</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">recruiters</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">is</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">dedicated</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">to</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">re-imagining</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">the</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">behaviors,</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">beliefs,</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">values,</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">and</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">normalcies</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">our</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">world</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">has</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">when</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">it</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">comes</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">to</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">hiring.</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">Our</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">team</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">is</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">working</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">to</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">ensure</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">that</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">hiring</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">is</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">no</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">longer</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">just</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">a</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">quick</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">process</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">but</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">an</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">efficient</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">one.</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">We</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">find</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">the</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">right</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">candidate</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">the</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">first</span>
+        <span class="magic-word" style="font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;color:#052759;opacity:0.15;transition:opacity 0.4s ease;display:inline;margin-right:0.3em;">time.</span>
+    </div>
+</section>
+
+
+<section class="team-approach">
+    <div class="section-header fade-up">
+        <span class="section-label">OUR APPROACH</span>
+        <h2 class="section-title">How Are We Successful?</h2>
+    </div>
+
+    <div class="cards-grid fade-up">
+        <div class="approach-card fade-up">
+            <div class="card-top-bar"></div>
+            <div class="card-number">01</div>
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+            </div>
+            <h3 class="card-title">AI-Powered Precision</h3>
+            <p class="card-body">We use the latest AI technology and combine it with our proven, strategic recruitment processes to bring you the right candidate the first time.</p>
+        </div>
+
+        <div class="approach-card fade-up">
+            <div class="card-top-bar"></div>
+            <div class="card-number">02</div>
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+            <h3 class="card-title">Certified Excellence</h3>
+            <p class="card-body">Our certified staff continually engages in personal and professional development opportunities that provide you with a hand above your competitors.</p>
+        </div>
+
+        <div class="approach-card fade-up">
+            <div class="card-top-bar"></div>
+            <div class="card-number">03</div>
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="card-title">Candidate Counseling</h3>
+            <p class="card-body">We not only source candidates, we counsel them to be successful in their job search, interviews, and hiring.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3: OUR TEAM -->
+<section class="team-section">
+    <div class="section-header fade-up">
+        <span class="section-label">THE PEOPLE BEHIND THE PLACEMENTS</span>
+        <h2 class="section-title">Our Team</h2>
+        <p class="team-subtext">People matter. The Engage team will show you just how great recruiting for the future can be and how much we love what we do.</p>
+    </div>
+
+    <!-- GROUP 1: LEADERSHIP & FOUNDERS -->
+    <div class="team-group fade-up">
+        <div class="team-group-header">
+            <div class="group-bar"></div>
+            <span class="group-title">Leadership & Founders</span>
+            <div class="group-line"></div>
+        </div>
+        <div class="team-cards-grid">
+            <div class="team-card fade-up">
+                <div class="team-avatar">RD</div>
+                <div class="team-name">Rob Deck</div>
+                <div class="team-role">Co-Founder</div>
+                <div class="team-specialties">Leadership & Recruitment</div>
+                <a href="mailto:rdeck@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    rdeck@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">CE</div>
+                <div class="team-name">Christopher Edwards</div>
+                <div class="team-role">Co-Founder</div>
+                <a href="mailto:chris@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    chris@engagestaff.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- GROUP 2: NEW YORK OFFICE -->
+    <div class="team-group fade-up">
+        <div class="team-group-header">
+            <div class="group-bar"></div>
+            <span class="group-title">New York Office</span>
+            <div class="group-line"></div>
+        </div>
+        <div class="team-cards-grid">
+            <div class="team-card fade-up">
+                <div class="team-avatar">DK</div>
+                <div class="team-name">Dot King, CSP</div>
+                <div class="team-role">Executive Vice President, Staffing</div>
+                <div class="team-specialties">Engineering, Pharmaceutical, Manufacturing, IT, Supply Chain</div>
+                <a href="mailto:dot@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    dot@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">JV</div>
+                <div class="team-name">Joanne Vanchieri</div>
+                <div class="team-role">Executive Recruiter</div>
+                <div class="team-specialties">Talent Acquisition for Various Industries</div>
+                <a href="mailto:joanne@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    joanne@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">SH</div>
+                <div class="team-name">Sharon Hedlund</div>
+                <div class="team-role">Director of Recruitment</div>
+                <div class="team-specialties">Marketing, Digital & Creative Talent, IT, Creative Talent</div>
+                <a href="mailto:sharon@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    sharon@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">JK</div>
+                <div class="team-name">John Kearney</div>
+                <div class="team-role">Account Manager / Executive Recruiter</div>
+                <a href="mailto:jkearney@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    jkearney@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">AB</div>
+                <div class="team-name">Anthony Barbara</div>
+                <div class="team-role">Account Manager / Executive Recruiter</div>
+                <a href="mailto:anthony@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    anthony@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">CW</div>
+                <div class="team-name">Cara Wool</div>
+                <div class="team-role">Executive Recruiter</div>
+                <div class="team-specialties">Manufacturing, OEM, HVAC/R, Appliance, Foodservice, Automotive, Material Handling, CPG</div>
+                <a href="mailto:cara@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    cara@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">HR</div>
+                <div class="team-name">Heidi Rudolph</div>
+                <div class="team-role">Director of Clinical Recruitment / Retention</div>
+                <a href="mailto:heidi@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    heidi@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">KS</div>
+                <div class="team-name">Kyle Schofield</div>
+                <div class="team-role">Recruiter</div>
+                <a href="mailto:kyle@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    kyle@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">AW</div>
+                <div class="team-name">Alyssa Wolfson</div>
+                <div class="team-role">Recruiter</div>
+                <a href="mailto:alyssa@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    alyssa@engagestaff.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- GROUP 3: FLORIDA OFFICE -->
+    <div class="team-group fade-up">
+        <div class="team-group-header">
+            <div class="group-bar"></div>
+            <span class="group-title">Florida Office</span>
+            <div class="group-line"></div>
+        </div>
+        <div class="team-cards-grid">
+            <div class="team-card fade-up">
+                <div class="team-avatar">MS</div>
+                <div class="team-name">Mary Beth Seaman</div>
+                <div class="team-role">Executive VP Healthcare IT</div>
+                <a href="mailto:marybeth@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    marybeth@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">WE</div>
+                <div class="team-name">Wendi Eggener</div>
+                <div class="team-role">Executive Director of Recruitment</div>
+                <div class="team-specialties">IT, Healthcare IT, EMR, Finance, Marketing</div>
+                <a href="mailto:wendi@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    wendi@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">NS</div>
+                <div class="team-name">Nicole A. Sawyer</div>
+                <div class="team-role">Sr. Recruiter / Account Manager</div>
+                <div class="team-specialties">Healthcare IT, Cloud, Business Intelligence, Cybersecurity, Engineering, Manufacturing, Marketing</div>
+                <a href="mailto:nicole@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    nicole@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">SN</div>
+                <div class="team-name">Sujaya Nath</div>
+                <div class="team-role">Director of Recruitment</div>
+                <a href="mailto:snath@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    snath@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">MA</div>
+                <div class="team-name">Michael Aronowitz</div>
+                <div class="team-role">Account Manager / Recruiter</div>
+                <a href="mailto:maron@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    maron@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">DF</div>
+                <div class="team-name">Deborah Friedman</div>
+                <div class="team-role">Senior Executive Recruiter</div>
+                <a href="mailto:debbie@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    debbie@engagestaff.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- GROUP 4: OPERATIONS & MARKETING -->
+    <div class="team-group fade-up">
+        <div class="team-group-header">
+            <div class="group-bar"></div>
+            <span class="group-title">Operations & Marketing</span>
+            <div class="group-line"></div>
+        </div>
+        <div class="team-cards-grid">
+            <div class="team-card fade-up">
+                <div class="team-avatar">ZB</div>
+                <div class="team-name">Ziga Bracko</div>
+                <div class="team-role">Technology and AI Recruiter</div>
+                <a href="mailto:ziga@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    ziga@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">KS</div>
+                <div class="team-name">Kristine Sullivan</div>
+                <div class="team-role">Operations Manager</div>
+                <a href="mailto:kristine@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    kristine@engagestaff.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">JB</div>
+                <div class="team-name">Jenn Bruno</div>
+                <div class="team-role">Director of Marketing</div>
+                <a href="mailto:jenn.engage@gmail.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    jenn.engage@gmail.com
+                </a>
+            </div>
+            <div class="team-card fade-up">
+                <div class="team-avatar">MA</div>
+                <div class="team-name">Maria Abreu</div>
+                <div class="team-role">Accounting</div>
+                <a href="mailto:maria@engagestaff.com" class="team-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                    maria@engagestaff.com
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 4: BECOME A RECRUITER -->
+<section class="recruiter-section" id="become-recruiter-section">
+    <!-- LEFT COLUMN: CONTENT -->
+    <div class="recruiter-content">
+        <span class="recruiter-label">JOIN OUR TEAM</span>
+        <h2 class="recruiter-title">Become a Recruiter at Engage</h2>
+        <p class="recruiter-text">Our success in the recruitment space only comes from having recruiters who care deeply for their clients and job candidates. Are you the perfect fit for a company like ours?</p>
+        <a href="mailto:info@engagestaff.com?subject=Resume Submission" class="recruiter-button">Submit Your Resume →</a>
+
+        <div class="recruiter-stats">
+            <div class="recruiter-stat">
+                <div class="recruiter-stat-number">25+</div>
+                <div class="recruiter-stat-label">Years Placing Talent</div>
+            </div>
+            <div class="recruiter-stat">
+                <div class="recruiter-stat-number">12</div>
+                <div class="recruiter-stat-label">Specialty Areas</div>
+            </div>
+            <div class="recruiter-stat">
+                <div class="recruiter-stat-number">37M+</div>
+                <div class="recruiter-stat-label">Professionals Reached</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN: VIDEO -->
+    <div class="recruiter-video-side">
+        <div class="video-wrapper">
+            <iframe
+                src="https://player.vimeo.com/video/1180556191?badge=0&autopause=0&player_id=0&app_id=58479&controls=0&autoplay=0&title=0&byline=0&portrait=0"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                referrerpolicy="strict-origin-when-cross-origin"
+                title="Engage Team">
+            </iframe>
+        </div>
+
+        <div id="video-overlay">
+            <div id="play-btn-circle">
+                <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+        </div>
+
+        <button id="sound-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="16" height="16"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        </button>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-column">
+            <h3>Company</h3>
+            <a href="team.html">About</a>
+            <a href="#">Services</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+        </div>
+        <div class="footer-column">
+            <h3>For Job Seekers</h3>
+            <a href="#">Find a Job</a>
+            <a href="#">Submit Resume</a>
+            <a href="#">Job Alerts</a>
+            <a href="#">Career Resources</a>
+        </div>
+        <div class="footer-column">
+            <h3>For Employers</h3>
+            <a href="#">Hire a Candidate</a>
+            <a href="#">Our Process</a>
+            <a href="#">Specialties</a>
+            <a href="#">Request a Quote</a>
+        </div>
+        <div class="footer-column locations">
+            <h3>Locations</h3>
+            <div style="display:flex;align-items:flex-start;">
+                <svg viewBox="0 0 24 24" fill="#36DB64" width="14" height="14" style="margin-right:6px;flex-shrink:0;margin-top:2px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>New York HQ · 155 Pinelawn Rd Suite 130 South · Melville NY 11747</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;margin-top:0.5rem;">
+                <svg viewBox="0 0 24 24" fill="#36DB64" width="14" height="14" style="margin-right:6px;flex-shrink:0;margin-top:2px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Florida Office · 7501 Wiles Rd Suite 207 · Coral Springs FL 33076</span>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <a href="tel:6312594311" style="display:flex;align-items:center;color:inherit;text-decoration:none;">
+                <svg viewBox="0 0 24 24" fill="#36DB64" width="16" height="16" style="margin-right:8px;flex-shrink:0;vertical-align:middle;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>631-259-4311</span>
+            </a>
+            <a href="mailto:info@engagestaff.com">info@engagestaff.com</a>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/engage-partners-inc-/" target="_blank" class="social-icon" title="LinkedIn" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;min-height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:white;text-decoration:none;box-sizing:border-box;overflow:hidden;flex-shrink:0;padding:0;line-height:1;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="display:block;flex-shrink:0;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/engagepartners/" target="_blank" class="social-icon" title="Facebook" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;min-height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:white;text-decoration:none;box-sizing:border-box;overflow:hidden;flex-shrink:0;padding:0;line-height:1;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="display:block;flex-shrink:0;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/engagepartnersinc/" target="_blank" class="social-icon" title="Instagram" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;min-height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:white;text-decoration:none;box-sizing:border-box;overflow:hidden;flex-shrink:0;padding:0;line-height:1;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="display:block;flex-shrink:0;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/user/EngagePartners" target="_blank" class="social-icon" title="YouTube" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;min-height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:white;text-decoration:none;box-sizing:border-box;overflow:hidden;flex-shrink:0;padding:0;line-height:1;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="display:block;flex-shrink:0;"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+                </a>
+                <a href="https://x.com/engage_partners" target="_blank" class="social-icon" title="X" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;min-height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:white;text-decoration:none;box-sizing:border-box;overflow:hidden;flex-shrink:0;padding:0;line-height:1;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="display:block;flex-shrink:0;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.738-8.835L1.254 2.25H8.08l4.259 5.632 5.905-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wordmark">ENGAGE</div>
+    <div class="footer-bottom">
+        <div class="footer-bottom-left">© 2026 Engage Partners, Inc. All rights reserved.</div>
+        <div class="footer-bottom-right">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // SCROLL PROGRESS BAR
+    const scrollProgressBar = document.querySelector('.scroll-progress-bar');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgressBar.style.width = scrollPercent + '%';
+    });
+
+    // NAVIGATION WITH MEGA MENU
+    (function() {
+        var nav = document.getElementById('main-nav');
+        var navLinks = document.querySelectorAll('.nav-link');
+
+        function updateNav() {
+            var scrolled = window.scrollY > 60;
+            var navPill = document.getElementById('nav-links-pill');
+
+            if (scrolled) {
+                nav.classList.add('scrolled');
+                nav.style.background = 'white';
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+                if (navPill) {
+                    navPill.style.background = 'rgba(5,39,89,0.06)';
+                    navPill.style.borderColor = 'rgba(5,39,89,0.1)';
+                }
+                navLinks.forEach(function(l) {
+                    l.style.color = '#052759';
+                });
+            } else {
+                nav.classList.remove('scrolled');
+                nav.style.background = 'transparent';
+                nav.style.boxShadow = 'none';
+                if (navPill) {
+                    navPill.style.background = 'rgba(0,0,0,0.18)';
+                    navPill.style.borderColor = 'rgba(255,255,255,0.12)';
+                }
+                navLinks.forEach(function(l) {
+                    l.style.color = 'white';
+                });
+            }
+            var activeLink = document.querySelector('.nav-link-active');
+            if (activeLink) activeLink.style.fontWeight = '700';
+        }
+
+        window.addEventListener('scroll', updateNav, { passive: true });
+        updateNav();
+
+        // Dropdown logic
+        var specialtiesTrigger = document.getElementById('specialties-trigger');
+        var specialtiesDropdown = document.getElementById('specialties-dropdown');
+        var specialtiesChevron = document.getElementById('specialties-chevron');
+        var specialtiesItem = document.getElementById('specialties-menu-item');
+
+        var servicesTrigger = document.getElementById('services-trigger');
+        var servicesDropdown = document.getElementById('services-dropdown');
+        var servicesChevron = document.getElementById('services-chevron');
+        var servicesItem = document.getElementById('services-menu-item');
+
+        function showDropdown(dropdown, chevron) {
+            dropdown.style.display = 'block';
+            dropdown.style.opacity = '0';
+            dropdown.style.transform = 'translateX(-50%) translateY(-8px)';
+            setTimeout(function() {
+                dropdown.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+                dropdown.style.opacity = '1';
+                dropdown.style.transform = 'translateX(-50%) translateY(0)';
+            }, 10);
+            chevron.style.transform = 'rotate(180deg)';
+        }
+
+        function hideDropdown(dropdown, chevron) {
+            dropdown.style.opacity = '0';
+            dropdown.style.transform = 'translateX(-50%) translateY(-8px)';
+            setTimeout(function() { dropdown.style.display = 'none'; }, 200);
+            chevron.style.transform = 'rotate(0deg)';
+        }
+
+        specialtiesItem.addEventListener('mouseenter', function() { showDropdown(specialtiesDropdown, specialtiesChevron); });
+        specialtiesItem.addEventListener('mouseleave', function() { hideDropdown(specialtiesDropdown, specialtiesChevron); });
+        servicesItem.addEventListener('mouseenter', function() { showDropdown(servicesDropdown, servicesChevron); });
+        servicesItem.addEventListener('mouseleave', function() { hideDropdown(servicesDropdown, servicesChevron); });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!specialtiesItem.contains(e.target)) hideDropdown(specialtiesDropdown, specialtiesChevron);
+            if (!servicesItem.contains(e.target)) hideDropdown(servicesDropdown, servicesChevron);
+        });
+    })();
+
+    // INTERSECTION OBSERVER FOR FADE-UP
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -80px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+        observer.observe(el);
+    });
+
+    // MAGIC TEXT REVEAL ANIMATION
+    const container = document.getElementById('magic-text-container');
+    const words = document.querySelectorAll('.magic-word');
+
+    if (container && words.length > 0) {
+        function revealWords() {
+            const containerRect = container.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            const startReveal = windowHeight * 0.8;
+            const endReveal = windowHeight * 0.2;
+
+            const totalScrollRange = containerRect.height + (startReveal - endReveal);
+            const currentScroll = startReveal - containerRect.top;
+            const scrollProgress = Math.max(0, Math.min(1, currentScroll / totalScrollRange));
+
+            words.forEach(function(word, index) {
+                const wordProgress = index / (words.length - 1);
+                if (scrollProgress > wordProgress * 0.85) {
+                    word.style.opacity = '1';
+                } else {
+                    word.style.opacity = '0.15';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealWords, { passive: true });
+        revealWords();
+    }
+
+    // VIDEO PLAYER CONTROLS
+    var player = null;
+    var isPlaying = false;
+    var isMuted = true;
+
+    window.addEventListener('load', function() {
+        var iframe = document.querySelector('#become-recruiter-section iframe');
+        if (iframe && typeof Vimeo !== 'undefined') {
+            player = new Vimeo.Player(iframe);
+            player.setMuted(true);
+        }
+    });
+
+    var overlay = document.getElementById('video-overlay');
+    var soundBtn = document.getElementById('sound-btn');
+    var playBtnCircle = document.getElementById('play-btn-circle');
+
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            if (!player) return;
+            if (isPlaying) {
+                player.pause();
+                isPlaying = false;
+                overlay.style.background = 'transparent';
+                playBtnCircle.style.display = 'flex';
+            } else {
+                player.play();
+                isPlaying = true;
+                overlay.style.background = 'transparent';
+                playBtnCircle.style.display = 'none';
+            }
+        });
+    }
+
+    if (soundBtn) {
+        soundBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (!player) return;
+            isMuted = !isMuted;
+            player.setMuted(isMuted);
+            soundBtn.innerHTML = isMuted ?
+                '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="16" height="16"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>' :
+                '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="16" height="16"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a 5 5 0 0 1 0 7.07"/></svg>';
+        });
+    }
+</script>
+
+</body>
+</html>

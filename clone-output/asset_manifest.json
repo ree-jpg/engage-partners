@@ -1,0 +1,792 @@
+{
+  "base_url": "https://www.alpha.org/",
+  "html_file": "/Users/arinadavydova/Desktop/site-clone/clone-output/raw_source.html",
+  "assets_directory": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets",
+  "timestamp": "2026-04-01T14:06:20.370097",
+  "summary": {
+    "total_downloaded": 144,
+    "total_size_bytes": 49339366,
+    "total_size_mb": 47.05,
+    "total_failed": 4
+  },
+  "assets_by_type": {
+    "css_images": {
+      "count": 30,
+      "total_size": 541967,
+      "assets": [
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/error-dark.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/error-dark.png",
+          "size": 1262
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/error-dark@2x.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/error-dark@2x.png",
+          "size": 1676
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/play-button.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/play-button.png",
+          "size": 1219
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/play-button@2x.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/play-button@2x.png",
+          "size": 2909
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/edit-aviary-light.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/edit-aviary-light.png",
+          "size": 2968
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/edit-aviary-light@2x.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/edit-aviary-light@2x.png",
+          "size": 3097
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/edit-info-light.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/edit-info-light.png",
+          "size": 3051
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/edit-info-light@2x.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/edit-info-light@2x.png",
+          "size": 3420
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/trash-9-light.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/trash-9-light.png",
+          "size": 1042
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/trash-9-light@2x.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/trash-9-light@2x.png",
+          "size": 990
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/trash-9-red.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/trash-9-red.png",
+          "size": 1057
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/trash-9-red@2x.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/trash-9-red@2x.png",
+          "size": 1048
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/getty-16-light.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/getty-16-light.png",
+          "size": 3072
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/getty-32-light.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/getty-32-light.png",
+          "size": 3374
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/shopping-cart-16-light.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/shopping-cart-16-light.png",
+          "size": 3010
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/damask/shopping-cart-32-light.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/damask/shopping-cart-32-light.png",
+          "size": 3216
+        },
+        {
+          "url": "https://static1.squarespace.com/universal/images-v6/icons/block-indicator-dark.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/universal/images-v6/icons/block-indicator-dark.png",
+          "size": 561
+        },
+        {
+          "url": "https://static1.squarespace.com/universal/images-v6/icons/block-indicator-dark@2x.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/universal/images-v6/icons/block-indicator-dark@2x.png",
+          "size": 1672
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/fonts/squarespace-ui-font.svg#squarespace-ui-font",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/fonts/squarespace-ui-font.svg",
+          "size": 23403
+        },
+        {
+          "url": "https://static1.squarespace.com/universal/images-v6/icons/opentable-icons.svg",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/universal/images-v6/icons/opentable-icons.svg",
+          "size": 1495
+        },
+        {
+          "url": "https://static1.squarespace.com/universal/images-v6/icons/opentable-icons.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/universal/images-v6/icons/opentable-icons.png",
+          "size": 2320
+        },
+        {
+          "url": "https://static1.squarespace.com/universal/images-v6/icons/icon-searchqueries-20-dark.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/universal/images-v6/icons/icon-searchqueries-20-dark.png",
+          "size": 361
+        },
+        {
+          "url": "https://static1.squarespace.com/universal/images-v6/icons/icon-searchqueries-20-light.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/universal/images-v6/icons/icon-searchqueries-20-light.png",
+          "size": 3034
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/icons/icon-video-24-light-solid.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/icons/icon-video-24-light-solid.png",
+          "size": 365
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/standard/icon_close_7_light.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/standard/icon_close_7_light.png",
+          "size": 176
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/images-v6/icons/icon-settings-16-light.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/images-v6/icons/icon-settings-16-light.png",
+          "size": 3058
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/fonts/social-20141119/social-icon-font.svg#social-icon-font",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/fonts/social-20141119/social-icon-font.svg",
+          "size": 64791
+        },
+        {
+          "url": "https://static1.squarespace.com/static/5ba5e044b10f25cb908c506f/t/66de25785e74a84e10708c23/1725834616316/arrow_icon.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/static/5ba5e044b10f25cb908c506f/t/66de25785e74a84e10708c23/1725834616316/arrow_icon.png",
+          "size": 1327
+        },
+        {
+          "url": "https://static1.squarespace.com/static/5ba5e044b10f25cb908c506f/t/66ddf85e81259571daae561c/1725823070523/external_icon_3.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/static/5ba5e044b10f25cb908c506f/t/66ddf85e81259571daae561c/1725823070523/external_icon_3.png",
+          "size": 1240
+        },
+        {
+          "url": "https://www.alpha.org/#section-divider-67e5461a12d41224330efe35",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.alpha.org/index.html",
+          "size": 401753
+        }
+      ]
+    },
+    "fonts": {
+      "count": 25,
+      "total_size": 470568,
+      "assets": [
+        {
+          "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF438weI_wBOZFDjA.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/newsreader/v26/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF438weI_wBOZFDjA.woff2",
+          "size": 5428
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF438weI_wBeZFDjA.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/newsreader/v26/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF438weI_wBeZFDjA.woff2",
+          "size": 14212
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF438weI_wC-ZF.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/newsreader/v26/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF438weI_wC-ZF.woff2",
+          "size": 22480
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnohkk72xU.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnohkk72xU.woff2",
+          "size": 23304
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojUk72xU.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojUk72xU.woff2",
+          "size": 9568
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojEk72xU.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojEk72xU.woff2",
+          "size": 23380
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnogkk7.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/playfairdisplay/v40/nuFkD-vYSZviVYUb_rj3ij__anPXDTnogkk7.woff2",
+          "size": 38804
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2",
+          "size": 21152
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2",
+          "size": 9112
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2",
+          "size": 21140
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2",
+          "size": 38404
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIuaomQNQcsA88c7O9yZ4KMCoOg4Koz4yOqhMva.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/plusjakartasans/v12/LDIuaomQNQcsA88c7O9yZ4KMCoOg4Koz4yOqhMva.woff2",
+          "size": 1768
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIuaomQNQcsA88c7O9yZ4KMCoOg4Koz4yGqhMva.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/plusjakartasans/v12/LDIuaomQNQcsA88c7O9yZ4KMCoOg4Koz4yGqhMva.woff2",
+          "size": 9112
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIuaomQNQcsA88c7O9yZ4KMCoOg4Koz4yCqhMva.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/plusjakartasans/v12/LDIuaomQNQcsA88c7O9yZ4KMCoOg4Koz4yCqhMva.woff2",
+          "size": 23224
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIuaomQNQcsA88c7O9yZ4KMCoOg4Koz4y6qhA.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/plusjakartasans/v12/LDIuaomQNQcsA88c7O9yZ4KMCoOg4Koz4y6qhA.woff2",
+          "size": 29600
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yyygA.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yyygA.woff2",
+          "size": 1716
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yyygA.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yyygA.woff2",
+          "size": 8352
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko40yyygA.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko40yyygA.woff2",
+          "size": 21728
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2",
+          "size": 27348
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/fonts/squarespace-ui-font.eot",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/fonts/squarespace-ui-font.eot",
+          "size": 6788
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/fonts/squarespace-ui-font.woff",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/fonts/squarespace-ui-font.woff",
+          "size": 9068
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/fonts/squarespace-ui-font.ttf",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/fonts/squarespace-ui-font.ttf",
+          "size": 6576
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/fonts/social-20141119/social-icon-font.eot",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/fonts/social-20141119/social-icon-font.eot",
+          "size": 32876
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/fonts/social-20141119/social-icon-font.woff",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/fonts/social-20141119/social-icon-font.woff",
+          "size": 32752
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/fonts/social-20141119/social-icon-font.ttf",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/fonts/social-20141119/social-icon-font.ttf",
+          "size": 32676
+        }
+      ]
+    },
+    "images": {
+      "count": 26,
+      "total_size": 42246908,
+      "assets": [
+        {
+          "url": "https://static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/683448ede4c3117d2d00e1ad/1748257005728/add_200dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/683448ede4c3117d2d00e1ad/1748257005728/add_200dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png",
+          "size": 1931
+        },
+        {
+          "url": "https://static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/68343f36c67c185911ac6c71/1748254518711/globe_location_pin_200dp_E42312_FILL0_wght400_GRAD0_opsz48.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/68343f36c67c185911ac6c71/1748254518711/globe_location_pin_200dp_E42312_FILL0_wght400_GRAD0_opsz48.png",
+          "size": 5177
+        },
+        {
+          "url": "https://static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/68343fab1b6e2719d4bd345d/1748254635808/fingerprint_200dp_E42312_FILL0_wght400_GRAD0_opsz48.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/68343fab1b6e2719d4bd345d/1748254635808/fingerprint_200dp_E42312_FILL0_wght400_GRAD0_opsz48.png",
+          "size": 5775
+        },
+        {
+          "url": "https://static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/684fe14efa5b825d06d170b8/1750065486285/Alpha+Logo_Red+Favicon.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/684fe14efa5b825d06d170b8/1750065486285/Alpha+Logo_Red+Favicon.png",
+          "size": 61393
+        },
+        {
+          "url": "https://static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/68344985897809251da53420/1748257157712/quiz_200dp_E42312_FILL0_wght400_GRAD0_opsz48.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/68344985897809251da53420/1748257157712/quiz_200dp_E42312_FILL0_wght400_GRAD0_opsz48.png",
+          "size": 3061
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/81e8477b-29d7-4b2c-888e-025311b0de84/Alpha+Logo_Red+Favicon.png?format=1500w",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/81e8477b-29d7-4b2c-888e-025311b0de84/Alpha+Logo_Red+Favicon.png",
+          "size": 48382
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/1744633839555-GFPYA3X7O8RIE5KNYP6B/Explore+faith+at+Alpha-04.jpg",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/1744633839555-GFPYA3X7O8RIE5KNYP6B/Explore+faith+at+Alpha-04.jpg",
+          "size": 163988
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/114fa26d-b435-483d-8389-09891328888b/Alpha+Course+Group+Friends+Community+Explore+Faith+Jesus.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/114fa26d-b435-483d-8389-09891328888b/Alpha+Course+Group+Friends+Community+Explore+Faith+Jesus.png",
+          "size": 1099648
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/eab70781-23d4-472b-a82c-7475b9200f9f/Untitled-39.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/eab70781-23d4-472b-a82c-7475b9200f9f/Untitled-39.png",
+          "size": 1442
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/1743174523959-XZQJUE49O0RE1X6X3J8E/Weeeeee3.jpg",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/1743174523959-XZQJUE49O0RE1X6X3J8E/Weeeeee3.jpg",
+          "size": 1040386
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/1743174580735-TI69CMUU1GCR9SG4F4X0/Weeeeee.jpg",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/1743174580735-TI69CMUU1GCR9SG4F4X0/Weeeeee.jpg",
+          "size": 855000
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/1743027047446-KVTDIHMX8ZSI2PRR40GG/Johnny%2BIllustration%2BN.jpg",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/1743027047446-KVTDIHMX8ZSI2PRR40GG/Johnny%2BIllustration%2BN.jpg",
+          "size": 1359820
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/1743177673394-YM0QHAT6EJIGVBT4I7XT/UniW.jpg",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/1743177673394-YM0QHAT6EJIGVBT4I7XT/UniW.jpg",
+          "size": 437778
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/235473af-d003-4fa7-9c6d-32fe551127a8/Pink+Grain.jpg",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/235473af-d003-4fa7-9c6d-32fe551127a8/Pink+Grain.jpg",
+          "size": 82244
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/50bf8cdd-00ec-4ab7-88fd-4aaf478f8a43/68_1.gif",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/50bf8cdd-00ec-4ab7-88fd-4aaf478f8a43/68_1.gif",
+          "size": 4706260
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/49a9d127-80e7-45a8-9a1c-5f853a34bd48/Nicky+Gumbel+Speaking+At+Leadershop+Conference+.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/49a9d127-80e7-45a8-9a1c-5f853a34bd48/Nicky+Gumbel+Speaking+At+Leadershop+Conference+.png",
+          "size": 1941158
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/40b44ace-28b9-4c86-a6c1-b5e0ea43b3a3/marjan-blan-5Ft4NWTmeJE-unsplash+%281%29.jpg",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/40b44ace-28b9-4c86-a6c1-b5e0ea43b3a3/marjan-blan-5Ft4NWTmeJE-unsplash+%281%29.jpg",
+          "size": 299800
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/42d62d4b-c530-45e3-85fb-e4e43ed9943a/Screenshot+2025-04-07+at+17.44.55.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/42d62d4b-c530-45e3-85fb-e4e43ed9943a/Screenshot+2025-04-07+at+17.44.55.png",
+          "size": 2862096
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/dbbf1170-dc06-47b9-8fd9-905348b49343/ThumbY.jpg",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/dbbf1170-dc06-47b9-8fd9-905348b49343/ThumbY.jpg",
+          "size": 396430
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/9a6e32a1-ab77-45f5-9c74-9b8ab90aea45/Sticks-04.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/9a6e32a1-ab77-45f5-9c74-9b8ab90aea45/Sticks-04.png",
+          "size": 2150086
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/bcc836f3-027c-473f-a217-a093758ab4db/Sticks-05.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/bcc836f3-027c-473f-a217-a093758ab4db/Sticks-05.png",
+          "size": 6751796
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/c2247059-4e10-46af-b691-1613ea8ca5e3/Youth+Vibes_3.gif",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/c2247059-4e10-46af-b691-1613ea8ca5e3/Youth+Vibes_3.gif",
+          "size": 17699513
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/cc3a2abf-301c-42a6-ad0b-ac5a26a3a5ed/AYS-Animation-11.gif",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/cc3a2abf-301c-42a6-ad0b-ac5a26a3a5ed/AYS-Animation-11.gif",
+          "size": 127926
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/126de0f1-e9e1-4cd0-a2ae-757e5090ff22/Alpha+Logo_Red.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/126de0f1-e9e1-4cd0-a2ae-757e5090ff22/Alpha+Logo_Red.png",
+          "size": 18038
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/ed498bbb-d8fb-4784-81b9-fa1d8787b012/Fund+Dev+Icon.png",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/ed498bbb-d8fb-4784-81b9-fa1d8787b012/Fund+Dev+Icon.png",
+          "size": 20774
+        },
+        {
+          "url": "http://static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/687625ec1859506bbf5b885f/1752573420842/Website+Assets.jpg?format=1500w",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/static/67e3e5a2f58ee67192a74839/t/687625ec1859506bbf5b885f/1752573420842/Website+Assets.jpg",
+          "size": 107006
+        }
+      ]
+    },
+    "other": {
+      "count": 1,
+      "total_size": 3260,
+      "assets": [
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/e166a5a8-90ff-430c-9b5e-4af54493dfb2/favicon.ico?format=100w",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/images.squarespace-cdn.com/content/v1/67e3e5a2f58ee67192a74839/e166a5a8-90ff-430c-9b5e-4af54493dfb2/favicon.ico",
+          "size": 3260
+        }
+      ]
+    },
+    "scripts": {
+      "count": 47,
+      "total_size": 4255176,
+      "assets": [
+        {
+          "url": "https://assets.squarespace.com/@sqs/polyfiller/1.6/legacy.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/@sqs/polyfiller/1.6/legacy.js",
+          "size": 42387
+        },
+        {
+          "url": "https://assets.squarespace.com/@sqs/polyfiller/1.6/modern.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/@sqs/polyfiller/1.6/modern.js",
+          "size": 117609
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-b40f11cf00a5f0c0-min.en-US.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-b40f11cf00a5f0c0-min.en-US.js",
+          "size": 46674
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/scripts-compressed/extract-css-moment-js-vendor-6f2a1f6ec9a41489-min.en-US.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/scripts-compressed/extract-css-moment-js-vendor-6f2a1f6ec9a41489-min.en-US.js",
+          "size": 857780
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/scripts-compressed/cldr-resource-pack-22c6db795661f68d-min.en-US.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/scripts-compressed/cldr-resource-pack-22c6db795661f68d-min.en-US.js",
+          "size": 91765
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/scripts-compressed/common-vendors-stable-fbd854d40b0804b7-min.en-US.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/scripts-compressed/common-vendors-stable-fbd854d40b0804b7-min.en-US.js",
+          "size": 245912
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/scripts-compressed/common-vendors-c8ddb8817b25c64e-min.en-US.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/scripts-compressed/common-vendors-c8ddb8817b25c64e-min.en-US.js",
+          "size": 701833
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/scripts-compressed/common-6cf9917196333305-min.en-US.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/scripts-compressed/common-6cf9917196333305-min.en-US.js",
+          "size": 1091355
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/scripts-compressed/user-account-core-2ca2f9a1f8b07707-min.en-US.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/scripts-compressed/user-account-core-2ca2f9a1f8b07707-min.en-US.js",
+          "size": 104890
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/scripts-compressed/performance-36e0b113b0c11816-min.en-US.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/scripts-compressed/performance-36e0b113b0c11816-min.en-US.js",
+          "size": 29333
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/website.components.imageFluid.visitor.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/website.components.imageFluid.visitor.js",
+          "size": 28105
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/image-effect-parallax.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/image-effect-parallax.js",
+          "size": 6266
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/image-effect-refracted-circles.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/image-effect-refracted-circles.js",
+          "size": 3052
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.button/6ad51f2d-37d2-4bc9-ae62-1bb520857612_533/website.components.button.visitor.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.button/6ad51f2d-37d2-4bc9-ae62-1bb520857612_533/website.components.button.visitor.js",
+          "size": 11969
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/9882.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/9882.js",
+          "size": 10291
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/image-effect-film-grain.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/image-effect-film-grain.js",
+          "size": 8474
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/image-effect-refracted-lines.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/image-effect-refracted-lines.js",
+          "size": 12214
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/website.components.imageFluid.shared.constants.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/website.components.imageFluid.shared.constants.js",
+          "size": 869
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.html/409b24ac-664e-40d5-8439-b63e41eea290_363/website.components.html.visitor.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.html/409b24ac-664e-40d5-8439-b63e41eea290_363/website.components.html.visitor.js",
+          "size": 11888
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/image-effect-liquid.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/image-effect-liquid.js",
+          "size": 8949
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/748.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/748.js",
+          "size": 87925
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/8018.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/8018.js",
+          "size": 13133
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/confetti/confetti.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/confetti/confetti.js",
+          "size": 655
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/willmyerscode/toolkit@1/index.min.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/cdn.jsdelivr.net/gh/willmyerscode/toolkit@1/index.min.js",
+          "size": 22968
+        },
+        {
+          "url": "https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/scripts/site-bundle.af15b871a8bf052f4c2f5d93e4b0e4b2.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/scripts/site-bundle.af15b871a8bf052f4c2f5d93e4b0e4b2.js",
+          "size": 130183
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/willmyerscode/css-searchbar@0/css-search.min.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/cdn.jsdelivr.net/gh/willmyerscode/css-searchbar@0/css-search.min.js",
+          "size": 11908
+        },
+        {
+          "url": "https://www.ghosthub.boo/assets/b-h/index.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghosthub.boo/assets/b-h/index.js",
+          "size": 1064
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/helpers/jq/jq.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/helpers/jq/jq.js",
+          "size": 89475
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/claro/claro-7-1.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/claro/claro-7-1.js",
+          "size": 432
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/helpers/tm/tm.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/helpers/tm/tm.js",
+          "size": 94163
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/following-button/fb.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/following-button/fb.js",
+          "size": 660
+        },
+        {
+          "url": "https://mods.sqsmods.com/45794a2a07d304d5c51e7664abd0a38d-fhtextreveal/js/fhtextreveal.min.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/mods.sqsmods.com/45794a2a07d304d5c51e7664abd0a38d-fhtextreveal/js/fhtextreveal.min.js",
+          "size": 3960
+        },
+        {
+          "url": "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+          "size": 89476
+        },
+        {
+          "url": "https://mods.sqsmods.com/expand-sections-plugin/js/expand-v3.min.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/mods.sqsmods.com/expand-sections-plugin/js/expand-v3.min.js",
+          "size": 19443
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/helpers/magnific/m.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/helpers/magnific/m.js",
+          "size": 20216
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/video-pop-up/script.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/video-pop-up/script.js",
+          "size": 2286
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/kayto/kayto-7-1.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/kayto/kayto-7-1.js",
+          "size": 1763
+        },
+        {
+          "url": "https://storage.googleapis.com/squarestylist/vertical-tabs.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/storage.googleapis.com/squarestylist/vertical-tabs.js",
+          "size": 49955
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/frame/frame.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/frame/frame.js",
+          "size": 346
+        },
+        {
+          "url": "https://www.ghosthub.boo/assets/helpers/jq/jq.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghosthub.boo/assets/helpers/jq/jq.js",
+          "size": 89475
+        },
+        {
+          "url": "https://www.ghosthub.boo/assets/announcement-bar-drop-down/index.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghosthub.boo/assets/announcement-bar-drop-down/index.js",
+          "size": 1563
+        },
+        {
+          "url": "https://sqsmodsplugins.s3.amazonaws.com/95fb0a3dd584baef95da3fe33d9e56cf/js/buttons.min.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/sqsmodsplugins.s3.amazonaws.com/95fb0a3dd584baef95da3fe33d9e56cf/js/buttons.min.js",
+          "size": 811
+        },
+        {
+          "url": "https://mods.sqsmods.com/list-section-floating-navigation/js/index.min.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/mods.sqsmods.com/list-section-floating-navigation/js/index.min.js",
+          "size": 3592
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/willmyerscode/tabs@5/tabs.min.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/cdn.jsdelivr.net/gh/willmyerscode/tabs@5/tabs.min.js",
+          "size": 31626
+        },
+        {
+          "url": "https://mods.sqsmods.com/text-reveal-2/js/index.min.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/mods.sqsmods.com/text-reveal-2/js/index.min.js",
+          "size": 14162
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/willmyerscode/popup@v6/popup.min.js",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/cdn.jsdelivr.net/gh/willmyerscode/popup@v6/popup.min.js",
+          "size": 11152
+        },
+        {
+          "url": "https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516",
+          "size": 31169
+        }
+      ]
+    },
+    "stylesheets": {
+      "count": 15,
+      "total_size": 1821487,
+      "assets": [
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700;1,800",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/fonts.googleapis.com/css2",
+          "size": 18640
+        },
+        {
+          "url": "https://assets.squarespace.com/universal/styles-compressed/user-account-core-04f69a41dc2eeba0-min.en-US.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/assets.squarespace.com/universal/styles-compressed/user-account-core-04f69a41dc2eeba0-min.en-US.css",
+          "size": 2301
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.button/6ad51f2d-37d2-4bc9-ae62-1bb520857612_533/website.components.button.styles.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.button/6ad51f2d-37d2-4bc9-ae62-1bb520857612_533/website.components.button.styles.css",
+          "size": 1144
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.html/409b24ac-664e-40d5-8439-b63e41eea290_363/website.components.html.styles.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.html/409b24ac-664e-40d5-8439-b63e41eea290_363/website.components.html.styles.css",
+          "size": 118
+        },
+        {
+          "url": "https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/website.components.imageFluid.styles.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/definitions.sqspcdn.com/website-component-definition/static-assets/website.components.imageFluid/db3e4fe2-fa2d-414e-ba78-44baf5bbcae3_351/website.components.imageFluid.styles.css",
+          "size": 2912
+        },
+        {
+          "url": "https://static1.squarespace.com/static/versioned-site-css/67e3e5a2f58ee67192a74839/233/5c5a519771c10ba3470d8101/67e3e5a2f58ee67192a74841/1764/site.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/static/versioned-site-css/67e3e5a2f58ee67192a74839/233/5c5a519771c10ba3470d8101/67e3e5a2f58ee67192a74841/1764/site.css",
+          "size": 1307914
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/claro/claro.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/claro/claro.css",
+          "size": 3963
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/helpers/magnific/m.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/helpers/magnific/m.css",
+          "size": 6950
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/kayto/kayto.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/kayto/kayto.css",
+          "size": 9044
+        },
+        {
+          "url": "https://www.ghostplugins.dev/assets/frame/frame.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghostplugins.dev/assets/frame/frame.css",
+          "size": 1035
+        },
+        {
+          "url": "https://www.ghosthub.boo/assets/announcement-bar-drop-down/style.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/www.ghosthub.boo/assets/announcement-bar-drop-down/style.css",
+          "size": 1470
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/willmyerscode/tabs@5/tabs.min.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/cdn.jsdelivr.net/gh/willmyerscode/tabs@5/tabs.min.css",
+          "size": 22842
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/gh/willmyerscode/popup@v6/popup.min.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/cdn.jsdelivr.net/gh/willmyerscode/popup@v6/popup.min.css",
+          "size": 4490
+        },
+        {
+          "url": "https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1774894890005-4I6H3CZHSSD7SB4B0G4H/static.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1774894890005-4I6H3CZHSSD7SB4B0G4H/static.css",
+          "size": 434723
+        },
+        {
+          "url": "https://storage.googleapis.com/squarestylist/vertical-tabs.css",
+          "local_path": "/Users/arinadavydova/Desktop/site-clone/clone-output/assets/storage.googleapis.com/squarestylist/vertical-tabs.css",
+          "size": 3941
+        }
+      ]
+    }
+  },
+  "failed": [
+    {
+      "url": "https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1774894890005-4I6H3CZHSSD7SB4B0G4H/%23check",
+      "type": "css_images",
+      "error": "404 Client Error: Not Found for url: https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1774894890005-4I6H3CZHSSD7SB4B0G4H/%23check"
+    },
+    {
+      "url": "https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1774894890005-4I6H3CZHSSD7SB4B0G4H/%23check",
+      "type": "css_images",
+      "error": "404 Client Error: Not Found for url: https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1774894890005-4I6H3CZHSSD7SB4B0G4H/%23check"
+    },
+    {
+      "url": "https://www.alpha.org/1500",
+      "type": "images",
+      "error": "404 Client Error: Not Found for url: https://www.alpha.org/1500"
+    },
+    {
+      "url": "https://www.alpha.org/1315",
+      "type": "images",
+      "error": "404 Client Error: Not Found for url: https://www.alpha.org/1315"
+    }
+  ]
+}

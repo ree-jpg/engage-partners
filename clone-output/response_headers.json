@@ -1,0 +1,23 @@
+{
+  "Date": "Wed, 01 Apr 2026 18:59:50 GMT",
+  "Content-Type": "text/html;charset=utf-8",
+  "Transfer-Encoding": "chunked",
+  "Connection": "keep-alive",
+  "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\", cfEdge;dur=13,cfOrigin;dur=27",
+  "Age": "99647",
+  "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=cM8lF9xPSVnvDoBvs9lSzoeWRTNL3fJ9Imp1SqK9FS42bWbYkcqvxTW1pxb5kxjHMe0grVgG%2FY%2FxzXo15KpzZ2Mg7EeyqIq1qPiJLJsmuo9uDnIaPfbLNR0nFfScl1w%3D\"}]}",
+  "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+  "expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+  "Server": "cloudflare",
+  "Set-Cookie": "crumb=BaZ5Kd2Hwu3RNmYzYjVlZDY0NmVmZmVmNTk1OTA4YzA1MTE4MTRl;Secure;Path=/",
+  "strict-transport-security": "max-age=15552000",
+  "vary": "Accept-Encoding",
+  "x-content-type-options": "nosniff",
+  "x-contextid": "H4D04Rn8/2MxGeNe9",
+  "x-frame-options": "SAMEORIGIN, SAMEORIGIN",
+  "cf-cache-status": "DYNAMIC",
+  "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+  "Content-Encoding": "gzip",
+  "CF-RAY": "9e59d54ec8bbbc84-DFW",
+  "alt-svc": "h3=\":443\"; ma=86400"
+}

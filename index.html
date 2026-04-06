@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engage Partners - Staffing & Recruiting</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #444;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* SCROLL PROGRESS BAR */
+        .scroll-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #36DB64, #052759);
+            z-index: 9999;
+            transform-origin: left;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            background: transparent;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-center a {
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-center a:hover {
+            color: #36DB64;
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            padding: 1rem;
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 180px;
+            margin-top: 0.5rem;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            display: flex;
+        }
+
+        .nav-dropdown-menu a {
+            color: #052759;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+        }
+
+        .nav-dropdown-menu a:hover {
+            color: #36DB64;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-nav {
+            padding: 0.65rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-find-job {
+            background: #36DB64;
+            color: #052759;
+        }
+
+        .btn-find-job:hover {
+            transform: scale(1.03);
+        }
+
+        .btn-hire {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-hire:hover {
+            transform: scale(1.03);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled .hamburger span {
+            background: #052759;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.15) !important;
+            border-radius: 50px;
+        }
+
+        nav.scrolled .nav-link:hover {
+            background: rgba(5,39,89,0.08) !important;
+        }
+
+        .nav-link-active {
+            font-weight: 700;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(135deg, rgba(5, 39, 89, 0.88) 0%, rgba(5, 39, 89, 0.6) 55%, rgba(54, 219, 100, 0.1) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 860px;
+            padding: 0 2rem;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .hero-label {
+            color: #36DB64;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .hero-title {
+            font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.05;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.88);
+            max-width: 580px;
+            margin: 1.5rem auto 0;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #36DB64;
+            color: #052759;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.03);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            transform: scale(1.03);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+            stroke-width: 2px;
+            fill: none;
+            opacity: 0.7;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(12px);
+            }
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* STATS SECTION */
+        .stats {
+            background: white;
+            padding: 70px 60px;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 0 40px;
+            border-right: 1px solid #eee;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #052759;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background: #f8f9fb;
+            padding: 100px 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-left {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .about-right {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.7s ease forwards 0.2s;
+        }
+
+        .section-label {
+            color: #36DB64;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 700;
+            color: #052759;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-text {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-link {
+            color: #052759;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .section-link:hover {
+            text-decoration: underline;
+            gap: 1rem;
+        }
+
+        .quote-card {
+            background: #052759;
+            border-radius: 20px;
+            padding: 3rem;
+            color: white;
+        }
+
+        .quote-mark {
+            color: #36DB64;
+            font-size: 5rem;
+            line-height: 0.5;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .quote-text {
+            font-size: 1.15rem;
+            font-style: italic;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-attribution {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* SPECIALTIES SECTION */
+        .specialties {
+            background: white;
+            padding: 100px 60px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .specialties-header {
+            margin-bottom: 3rem;
+        }
+
+        .subtext {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        .specialty-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .specialty-pill {
+            background: transparent;
+            border: 2px solid #052759;
+            color: #052759;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.75rem 1.6rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: floatTag 3s ease-in-out infinite;
+        }
+
+        .specialty-pill:nth-child(1) { animation-delay: 0s; }
+        .specialty-pill:nth-child(2) { animation-delay: 0.25s; padding: 0.9rem 2rem; }
+        .specialty-pill:nth-child(3) { animation-delay: 0.5s; padding: 1.1rem 2.6rem; }
+        .specialty-pill:nth-child(4) { animation-delay: 0.75s; padding: 0.75rem 1.6rem; }
+        .specialty-pill:nth-child(5) { animation-delay: 1s; padding: 0.9rem 2rem; }
+        .specialty-pill:nth-child(6) { animation-delay: 1.25s; padding: 1.1rem 2.6rem; }
+        .specialty-pill:nth-child(7) { animation-delay: 1.5s; padding: 0.75rem 1.6rem; }
+        .specialty-pill:nth-child(8) { animation-delay: 1.75s; padding: 0.9rem 2rem; }
+        .specialty-pill:nth-child(9) { animation-delay: 2s; padding: 1.1rem 2.6rem; }
+        .specialty-pill:nth-child(10) { animation-delay: 2.25s; padding: 0.75rem 1.6rem; }
+        .specialty-pill:nth-child(11) { animation-delay: 2.5s; padding: 0.9rem 2rem; }
+        .specialty-pill:nth-child(12) { animation-delay: 2.75s; padding: 1.1rem 2.6rem; }
+
+        @keyframes floatTag {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .specialty-pill:hover {
+            background: #052759;
+            color: white;
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(5, 39, 89, 0.2);
+        }
+
+        /* CTA CARDS SECTION */
+        .cta-section {
+            background: #052759;
+            padding: 100px 0;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .cta-header {
+            margin-bottom: 3rem;
+            padding: 0 60px;
+        }
+
+        .cta-header .section-title {
+            color: white;
+        }
+
+        .cta-cards {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            gap: 0;
+        }
+
+        .cta-vertical-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            align-self: center;
+            padding: 20px 0;
+            margin-right: 24px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .cta-cards-wrapper {
+            display: flex;
+            flex: 1;
+            gap: 3px;
+            align-items: stretch;
+        }
+
+        .card-item {
+            position: relative;
+            height: 520px;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            flex: 1;
+            min-width: 0;
+            background: #000;
+        }
+
+        .card-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-size: cover;
+            background-position: center top;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .card-item:hover .card-bg {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+            height: 65%;
+            transition: height 0.4s ease;
+        }
+
+        .card-item:hover .card-overlay {
+            height: 80%;
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            padding: 2rem 2.2rem;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid #36DB64;
+            color: #36DB64;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-title {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 0;
+            transition: margin-bottom 0.35s ease;
+        }
+
+        .card-item:hover .card-title {
+            margin-bottom: 0.8rem;
+        }
+
+        .card-desc {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.88);
+            line-height: 1.65;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.45s ease, opacity 0.35s ease 0.1s, margin 0.35s ease;
+            margin-bottom: 0;
+        }
+
+        .card-item:hover .card-desc {
+            max-height: 100px;
+            opacity: 1;
+            margin-bottom: 1.2rem;
+        }
+
+        .card-btn {
+            display: inline-block;
+            background: #36DB64;
+            color: #052759;
+            border: none;
+            padding: 0.75rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s;
+        }
+
+        .card-item:hover .card-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonials {
+            background: white;
+            padding: 100px 60px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .testimonials-header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        /* TESTIMONIALS COLUMNS */
+        .testimonials-columns-container {
+            display: flex;
+            gap: 24px;
+            max-height: 680px;
+            overflow: hidden;
+            position: relative;
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+        }
+
+        .testimonials-columns-container:hover .testimonials-column {
+            animation-play-state: paused;
+        }
+
+        .testimonials-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+            animation: scrollUp 25s linear infinite;
+        }
+
+        .testimonials-column:nth-child(2) {
+            animation: scrollUp 30s linear infinite;
+            animation-delay: -8s;
+        }
+
+        .testimonials-column:nth-child(3) {
+            animation: scrollUp 22s linear infinite;
+            animation-delay: -15s;
+        }
+
+        @keyframes scrollUp {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+
+        .testimonials-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 20px rgba(5,39,89,0.06);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .testimonials-card-bg-quote {
+            position: absolute;
+            bottom: -10px;
+            right: 10px;
+            font-size: 100px;
+            color: rgba(5,39,89,0.04);
+            font-weight: 900;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .testimonials-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials-card-stars {
+            color: #FFB800;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .testimonials-card-quote {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #444;
+            font-style: italic;
+            margin-bottom: 1.2rem;
+        }
+
+        .testimonials-card-bottom {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonials-card-avatar {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #052759, #0a4a8a);
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonials-card-info {
+            text-align: left;
+        }
+
+        .testimonials-card-name {
+            font-weight: 700;
+            color: #052759;
+            font-size: 0.88rem;
+            display: block;
+        }
+
+        .testimonials-card-role {
+            color: #888;
+            font-size: 0.8rem;
+            margin-top: 2px;
+            display: block;
+        }
+
+        .testimonials-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            border: 2px solid #052759;
+            background: white;
+            color: #052759;
+            font-weight: 600;
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 3rem;
+        }
+
+        .testimonials-button:hover {
+            background: #052759;
+            color: white;
+        }
+
+        .testimonials-button-g {
+            font-weight: 900;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #4285F4, #34A853, #FBBC05, #EA4335);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* HIDE COLUMNS ON SMALLER SCREENS */
+        @media (max-width: 1024px) {
+            .testimonials-column:nth-child(3) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .testimonials-column:nth-child(2),
+            .testimonials-column:nth-child(3) {
+                display: none;
+            }
+        }
+
+        .carousel-google-button:hover {
+            background: #052759;
+            color: white;
+        }
+
+        .carousel-google-button:hover .google-g {
+            -webkit-text-fill-color: white;
+        }
+
+        .google-g {
+            font-weight: 900;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #4285F4, #34A853, #FBBC05, #EA4335);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: -webkit-text-fill-color 0.3s;
+        }
+
+        .testimonials-buttons {
+            text-align: center;
+        }
+
+        /* LEAD CAPTURE FORM SECTION */
+        .contact-form-section {
+            background: #36DB64;
+            padding: 100px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .contact-form-container {
+            max-width: 700px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-form-label {
+            color: #052759;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-form-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            color: #052759;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form-subtext {
+            color: rgba(5, 39, 89, 0.7);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        #contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            flex-direction: row;
+        }
+
+        .form-row input {
+            flex: 1;
+        }
+
+        #contact-form input,
+        #contact-form select {
+            width: 100%;
+            padding: 1rem 1.4rem;
+            border-radius: 12px;
+            border: 1px solid rgba(5, 39, 89, 0.15);
+            background: white;
+            color: #052759;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
+
+        #contact-form input::placeholder,
+        #contact-form select::placeholder,
+        #contact-form select option[disabled] {
+            color: rgba(5, 39, 89, 0.45);
+        }
+
+        #contact-form input:focus,
+        #contact-form select:focus {
+            border-color: #052759;
+            box-shadow: 0 0 0 3px rgba(5, 39, 89, 0.1);
+        }
+
+        #contact-form select {
+            background: white;
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            padding-right: 2.5rem;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23052759' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1.2em 1.2em;
+            padding-right: 2.5rem;
+        }
+
+        #contact-form select option {
+            background: #052759;
+            color: white;
+        }
+
+        #contact-form button {
+            width: 100%;
+            padding: 1.1rem;
+            border-radius: 12px;
+            border: none;
+            background: #052759;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #contact-form button:hover {
+            background: #041e42;
+            transform: translateY(-2px);
+        }
+
+        .contact-form-privacy {
+            color: #052759;
+            opacity: 0.7;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .form-thank-you {
+            display: none;
+            text-align: center;
+        }
+
+        .form-thank-you.show {
+            display: block;
+        }
+
+        .thank-you-checkmark {
+            font-size: 3rem;
+            color: #36DB64;
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-message {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* FOOTER CTA BAND */
+        .footer-cta {
+            background: #36DB64;
+            padding: 80px 60px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .footer-cta-title {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            color: #052759;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-cta-text {
+            color: rgba(5, 39, 89, 0.75);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-cta .btn-dark {
+            background: #052759;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-cta .btn-dark:hover {
+            background: #041e42;
+            transform: scale(1.03);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #041e42;
+            color: white;
+            padding: 80px 60px 0 60px;
+        }
+
+        .footer-top {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-column a,
+        .footer-column p {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.55);
+            padding: 0.35rem 0;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            line-height: 1.9;
+        }
+
+        .footer-column.locations {
+            font-size: 0.82rem;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-wordmark {
+            font-size: clamp(100px, 18vw, 220px);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: transparent;
+            -webkit-text-stroke: 2px #36DB64;
+            display: block;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            margin: 60px 0;
+            line-height: 1;
+            animation: neonPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes neonPulse {
+            0%, 100% {
+                -webkit-text-stroke-color: #36DB64;
+                filter: drop-shadow(0 0 8px rgba(54,219,100,0.8)) drop-shadow(0 0 20px rgba(54,219,100,0.5)) drop-shadow(0 0 40px rgba(54,219,100,0.3));
+                opacity: 1;
+            }
+            25% {
+                -webkit-text-stroke-color: rgba(54,219,100,0.4);
+                filter: drop-shadow(0 0 2px rgba(54,219,100,0.2));
+                opacity: 0.7;
+            }
+            50% {
+                -webkit-text-stroke-color: #36DB64;
+                filter: drop-shadow(0 0 15px rgba(54,219,100,1)) drop-shadow(0 0 35px rgba(54,219,100,0.7)) drop-shadow(0 0 60px rgba(54,219,100,0.4));
+                opacity: 1;
+            }
+            75% {
+                -webkit-text-stroke-color: rgba(54,219,100,0.6);
+                filter: drop-shadow(0 0 4px rgba(54,219,100,0.3));
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        @keyframes sparkPulse {
+            0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(54,219,100,0.5); }
+            50% { transform: scale(1.3); opacity: 0.8; box-shadow: 0 0 0 8px rgba(54,219,100,0); }
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 24px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-left: -60px;
+            margin-right: -60px;
+        }
+
+        .footer-bottom-right {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+        }
+
+        /* SOCIAL ICONS */
+        .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 0.75rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            min-height: 42px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            padding: 0;
+            line-height: 1;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-sizing: border-box;
+        }
+
+        .social-icon:hover {
+            background: #36DB64 !important;
+            border-color: #36DB64 !important;
+            color: #052759 !important;
+        }
+
+        .social-icon svg {
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .social-icon:hover {
+            background: #36DB64;
+            border-color: #36DB64;
+            color: #052759;
+        }
+
+        /* INTERSECTION OBSERVER FADE-UP */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-center,
+            .nav-right {
+                display: none;
+            }
+
+            .nav-center.mobile-open,
+            .nav-right.mobile-open {
+                display: flex;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                flex-direction: column;
+                width: 100%;
+                background: white;
+                padding: 1.5rem;
+                z-index: 999;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 50px 30px;
+            }
+
+            .stat {
+                border-right: none;
+                padding: 0;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 50px 30px;
+            }
+
+            .specialties {
+                padding: 50px 30px;
+            }
+
+            .cta-vertical-text {
+                display: none;
+            }
+
+            .cta-cards-wrapper {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .card-item {
+                height: 380px;
+            }
+
+            .testimonial-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 24px 30px;
+                margin-left: -30px;
+                margin-right: -30px;
+            }
+
+            .footer-cta,
+            .cta-section,
+            .specialties {
+                padding: 50px 30px;
+            }
+
+            .contact-form-section {
+                padding: 50px 30px;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-logo {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress-bar"></div>
+
+<!-- NAVIGATION -->
+<nav id="main-nav" style="position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 3rem;height:68px;display:flex;align-items:center;justify-content:space-between;background:transparent;transition:none;">
+
+  <!-- Logo -->
+  <a href="engage-final.html" id="nav-logo-link" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;">
+    <img id="nav-logo-img" src="https://image2url.com/r2/default/images/1775503403309-5487f9c8-0935-449c-9151-c934c25adc86.png" alt="Engage Partners" style="height:40px;width:auto;display:block;object-fit:contain;filter:none;">
+  </a>
+
+  <!-- Center nav -->
+  <ul id="nav-links-pill" style="background:rgba(0,0,0,0.18);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:50px;padding:4px 6px;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;gap:0;list-style:none;margin:0;transition:background 0.2s ease,border-color 0.2s ease;list-style:none;margin:0;padding:0;">
+
+    <!-- Team -->
+    <li style="position:relative;">
+      <a href="team.html" class="nav-link" style="display:flex;align-items:center;gap:4px;padding:0.45rem 1rem;font-size:0.92rem;font-weight:500;color:white;text-decoration:none;white-space:nowrap;background:transparent;border:none;cursor:pointer;transition:background 0.2s ease,color 0.2s ease;border-radius:50px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">Team</a>
+    </li>
+
+    <!-- Specialties with dropdown -->
+    <li style="position:relative;" id="specialties-menu-item">
+      <button id="specialties-trigger" class="nav-link" style="display:flex;align-items:center;gap:4px;padding:0.45rem 1rem;font-size:0.92rem;font-weight:500;color:white;background:transparent;border:none;cursor:pointer;white-space:nowrap;transition:background 0.2s ease,color 0.2s ease;border-radius:50px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">
+        Specialties
+        <svg id="specialties-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14" style="transition:transform 0.3s ease;flex-shrink:0;">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <!-- Specialties Dropdown -->
+      <div id="specialties-dropdown" style="display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#0a1628;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.5rem;min-width:520px;z-index:1001;box-shadow:0 20px 60px rgba(0,0,0,0.4);">
+        <p style="color:rgba(255,255,255,0.45);font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin:0 0 1rem 0;">Our 12 Specialty Areas</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;">
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Administrative
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Biotechnology
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Digital Marketing
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Engineering & Automation
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Finance & Accounting
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Food Service Equipment
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Giving & Philanthropy
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Healthcare
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Healthcare IT
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Information Technology
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>Sales & Marketing
+          </a>
+          <a href="#specialties" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.5rem;border-radius:8px;text-decoration:none;color:white;font-size:0.88rem;font-weight:500;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <span style="width:6px;height:6px;border-radius:50%;background:#36DB64;flex-shrink:0;"></span>340B
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <!-- Services with dropdown -->
+    <li style="position:relative;" id="services-menu-item">
+      <button id="services-trigger" class="nav-link" style="display:flex;align-items:center;gap:4px;padding:0.45rem 1rem;font-size:0.92rem;font-weight:500;color:white;background:transparent;border:none;cursor:pointer;white-space:nowrap;transition:background 0.2s ease,color 0.2s ease;border-radius:50px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">
+        Services
+        <svg id="services-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14" style="transition:transform 0.3s ease;flex-shrink:0;">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <!-- Services Dropdown -->
+      <div id="services-dropdown" style="display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#0a1628;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.5rem;min-width:320px;z-index:1001;box-shadow:0 20px 60px rgba(0,0,0,0.4);">
+        <p style="color:rgba(255,255,255,0.45);font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin:0 0 1rem 0;">What We Offer</p>
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <a href="#services" style="display:flex;align-items:flex-start;gap:12px;padding:0.75rem;border-radius:10px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(54,219,100,0.15);border:1px solid rgba(54,219,100,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#36DB64" stroke-width="2" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div>
+              <p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 3px 0;">Strategic Solutions</p>
+              <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin:0;line-height:1.4;">Executive search and retained recruiting</p>
+            </div>
+          </a>
+          <a href="#services" style="display:flex;align-items:flex-start;gap:12px;padding:0.75rem;border-radius:10px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(54,219,100,0.15);border:1px solid rgba(54,219,100,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#36DB64" stroke-width="2" width="16" height="16"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <div>
+              <p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 3px 0;">Transition & Implementation</p>
+              <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin:0;line-height:1.4;">Workforce transitions and project staffing</p>
+            </div>
+          </a>
+          <a href="#services" style="display:flex;align-items:flex-start;gap:12px;padding:0.75rem;border-radius:10px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='transparent'">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(54,219,100,0.15);border:1px solid rgba(54,219,100,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#36DB64" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div>
+              <p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 3px 0;">Support Services</p>
+              <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin:0;line-height:1.4;">Temp, contract, and direct hire placement</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <!-- Blog -->
+    <li style="position:relative;">
+      <a href="blog.html" class="nav-link" style="display:flex;align-items:center;gap:4px;padding:0.45rem 1rem;font-size:0.92rem;font-weight:500;color:white;text-decoration:none;white-space:nowrap;background:transparent;border:none;cursor:pointer;transition:background 0.2s ease,color 0.2s ease;border-radius:50px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">Blog</a>
+    </li>
+
+    <!-- Contact -->
+    <li style="position:relative;">
+      <a href="#contact" class="nav-link" style="display:flex;align-items:center;gap:4px;padding:0.45rem 1rem;font-size:0.92rem;font-weight:500;color:white;text-decoration:none;white-space:nowrap;background:transparent;border:none;cursor:pointer;transition:background 0.2s ease,color 0.2s ease;border-radius:50px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">Contact</a>
+    </li>
+
+  </ul>
+
+  <!-- Right side buttons -->
+  <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+    <a href="https://employee.engagestaff.com/bullhorn/#/" target="_blank" style="background:#36DB64;color:#052759;padding:0.6rem 1.4rem;border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;white-space:nowrap;border:none;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">Find a Job</a>
+    <a href="hire.html" id="hire-btn" style="background:#052759;color:white;padding:0.6rem 1.4rem;border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;white-space:nowrap;border:2px solid #052759;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">Hire a Candidate</a>
+  </div>
+
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero" id="hero">
+    <div id="vimeo-bg" style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.77vh;transform:translate(-50%,-50%);z-index:0;pointer-events:none;">
+      <iframe
+        src="https://player.vimeo.com/video/1180501188?badge=0&autopause=0&player_id=0&app_id=58479&background=1&autoplay=1&loop=1&muted=1"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        referrerpolicy="strict-origin-when-cross-origin"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;"
+        title="engage">
+      </iframe>
+    </div>
+    <div class="hero-buttons" style="position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%); display: flex; flex-direction: row; gap: 1rem; align-items: center; justify-content: center; z-index: 2;">
+        <a href="https://employee.engagestaff.com/bullhorn/#/" target="_blank" class="btn-primary">Find a Job</a>
+        <a href="hire.html" class="btn-secondary" style="background:#052759;border-color:#052759;">Hire a Candidate</a>
+    </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="stats fade-up" id="stats">
+    <div class="stat">
+        <div class="stat-number" data-number="25">0</div>
+        <div class="stat-label">Years in Business</div>
+    </div>
+    <div class="stat">
+        <div class="stat-number" data-number="175">0</div>
+        <div class="stat-label">Specialties Covered</div>
+    </div>
+    <div class="stat">
+        <div class="stat-number" data-number="37">0</div>
+        <div class="stat-label">Professionals Reached</div>
+    </div>
+    <div class="stat">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Recruiter Availability</div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about fade-up" id="team">
+    <div class="about-left">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">Precision Placement. Every Time.</h2>
+        <p class="section-text">Since our founding, Engage Partners has built a reputation for placing the right candidate the first time. We serve 12 specialty industries with a team of dedicated recruiters who combine deep domain expertise with AI-powered matching technology.</p>
+        <a href="team.html" class="section-link">Learn more about us →</a>
+    </div>
+    <div class="about-right">
+        <div class="quote-card">
+            <span class="quote-mark">"</span>
+            <p class="quote-text">The workplace is evolving. We specialize in identifying talent ready to shape the future — not just fill today's openings.</p>
+            <p class="quote-attribution">— Engage Partners Team</p>
+        </div>
+    </div>
+</section>
+
+<!-- SPECIALTIES SECTION -->
+<section class="specialties" id="specialties">
+    <div class="specialties-header">
+        <span class="section-label">Industries</span>
+        <h2 class="section-title">We Know Your Industry</h2>
+        <p class="subtext">12 specialty areas. Hundreds of placements. One standard: the right fit.</p>
+    </div>
+    <div class="specialty-tags">
+        <button class="specialty-pill">Administrative</button>
+        <button class="specialty-pill">Biotechnology</button>
+        <button class="specialty-pill">Digital Marketing</button>
+        <button class="specialty-pill">Engineering & Automation</button>
+        <button class="specialty-pill">Finance & Accounting</button>
+        <button class="specialty-pill">Food Service Equipment</button>
+        <button class="specialty-pill">Giving & Philanthropy</button>
+        <button class="specialty-pill">Healthcare</button>
+        <button class="specialty-pill">Healthcare IT</button>
+        <button class="specialty-pill">Information Technology</button>
+        <button class="specialty-pill">Sales & Marketing</button>
+        <button class="specialty-pill">340B</button>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section" id="services">
+    <div class="cta-header">
+        <span class="section-label">Get Started</span>
+        <h2 class="section-title">What Brings You Here Today?</h2>
+    </div>
+    <div class="cta-cards">
+        <div class="cta-vertical-text">Who We Help</div>
+        <div class="cta-cards-wrapper">
+            <div class="card-item">
+                <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=80');"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-tag">For Job Seekers</div>
+                    <h3 class="card-title">I'm Looking for Work</h3>
+                    <p class="card-desc">Browse open positions and let our expert recruiters match you with your next opportunity across 12 specialty industries.</p>
+                    <a href="https://employee.engagestaff.com/bullhorn/#/" target="_blank" class="card-btn">Find a Job →</a>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80');"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-tag">For Employers</div>
+                    <h3 class="card-title">I Need to Hire</h3>
+                    <p class="card-desc">Tell us what you need. We search, screen, and deliver qualified candidates — in as little as 2 days. No upfront costs.</p>
+                    <a href="hire.html" class="card-btn">Hire a Candidate →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="testimonials fade-up" id="testimonials">
+    <div class="testimonials-header">
+        <span class="section-label">Client Reviews</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+
+    <div class="testimonials-columns-container">
+        <div class="testimonials-column">
+            <!-- Column 1 - Card 1 -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">Sharon was absolutely amazing during the entire process. She has great connections and helped guide me through every step. She continually reached out with status updates — I finally got my foot in the door after years of trying.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">SM</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">Sarah M.</span>
+                            <span class="testimonials-card-role">Verified Candidate · Placed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column 1 - Card 2 -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">Their recruiters don't just source candidates — they counsel them to be successful. That level of care and attention to detail is genuinely rare in the staffing industry.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">TL</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">Talent Acquisition Lead</span>
+                            <span class="testimonials-card-role">Biotech Company</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column 1 - Card 3 -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">From the very first conversation Engage Partners understood exactly what kind of team member we needed. The placement was perfect and the onboarding was seamless.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">HR</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">HR Manager</span>
+                            <span class="testimonials-card-role">Healthcare Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Duplicate for seamless scroll -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">Sharon was absolutely amazing during the entire process. She has great connections and helped guide me through every step. She continually reached out with status updates — I finally got my foot in the door after years of trying.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">SM</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">Sarah M.</span>
+                            <span class="testimonials-card-role">Verified Candidate · Placed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">Their recruiters don't just source candidates — they counsel them to be successful. That level of care and attention to detail is genuinely rare in the staffing industry.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">TL</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">Talent Acquisition Lead</span>
+                            <span class="testimonials-card-role">Biotech Company</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">From the very first conversation Engage Partners understood exactly what kind of team member we needed. The placement was perfect and the onboarding was seamless.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">HR</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">HR Manager</span>
+                            <span class="testimonials-card-role">Healthcare Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials-column">
+            <!-- Column 2 - Card 1 -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">I wasn't sure about changing companies but Engage called me about a new opportunity. After working with their team for a few weeks I decided to take the leap — and I got the job offer.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">JR</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">James R.</span>
+                            <span class="testimonials-card-role">Operations Manager · New York</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column 2 - Card 2 -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">Engage Partners connected the right employee with the right role at the right time — exactly what we needed. We've been working with them for 3 years now.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">OD</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">Operations Director</span>
+                            <span class="testimonials-card-role">Finance Firm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column 2 - Card 3 -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">87% of employees would recommend working with Engage Partners. The culture, values, and career opportunities they open doors to are genuinely outstanding.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">VP</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">VP of People</span>
+                            <span class="testimonials-card-role">Fortune 500 Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Duplicate for seamless scroll -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">I wasn't sure about changing companies but Engage called me about a new opportunity. After working with their team for a few weeks I decided to take the leap — and I got the job offer.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">JR</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">James R.</span>
+                            <span class="testimonials-card-role">Operations Manager · New York</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">Engage Partners connected the right employee with the right role at the right time — exactly what we needed. We've been working with them for 3 years now.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">OD</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">Operations Director</span>
+                            <span class="testimonials-card-role">Finance Firm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">87% of employees would recommend working with Engage Partners. The culture, values, and career opportunities they open doors to are genuinely outstanding.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">VP</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">VP of People</span>
+                            <span class="testimonials-card-role">Fortune 500 Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials-column">
+            <!-- Column 3 - Card 1 -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">Engage Partners has consistently delivered quality candidates across multiple departments. Their scalable solutions work perfectly for our size organization.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">LK</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">Linda K.</span>
+                            <span class="testimonials-card-role">VP of Talent · Finance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column 3 - Card 2 -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">We tried many staffing firms before finding Engage. They are the only ones that consistently get it right the first time. Every single placement has been a long-term success.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">JM</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">James M.</span>
+                            <span class="testimonials-card-role">CEO · Technology Company</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column 3 - Card 3 -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">The team at Engage Partners took the time to understand our company culture deeply. Every candidate they presented was not just qualified but genuinely a great culture fit.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">RD</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">Rachel D.</span>
+                            <span class="testimonials-card-role">Director of HR · Biotech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Duplicate for seamless scroll -->
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">Engage Partners has consistently delivered quality candidates across multiple departments. Their scalable solutions work perfectly for our size organization.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">LK</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">Linda K.</span>
+                            <span class="testimonials-card-role">VP of Talent · Finance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">We tried many staffing firms before finding Engage. They are the only ones that consistently get it right the first time. Every single placement has been a long-term success.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">JM</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">James M.</span>
+                            <span class="testimonials-card-role">CEO · Technology Company</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-card">
+                <div class="testimonials-card-bg-quote">"</div>
+                <div class="testimonials-card-content">
+                    <div class="testimonials-card-stars">★★★★★</div>
+                    <div class="testimonials-card-quote">The team at Engage Partners took the time to understand our company culture deeply. Every candidate they presented was not just qualified but genuinely a great culture fit.</div>
+                    <div class="testimonials-card-bottom">
+                        <div class="testimonials-card-avatar">RD</div>
+                        <div class="testimonials-card-info">
+                            <span class="testimonials-card-name">Rachel D.</span>
+                            <span class="testimonials-card-role">Director of HR · Biotech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center;">
+        <a href="https://www.google.com/search?q=engage+partners&oq=engage+partners+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQLhivARjHARiABDIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEIODczOWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x89e82bc9d856b551:0x284aa5704dc66a,1" target="_blank" class="testimonials-button">
+            <span class="testimonials-button-g">G</span>
+            Read Our Google Reviews
+        </a>
+    </div>
+</section>
+
+<!-- CONTACT FORM SECTION -->
+<section class="contact-form-section" id="contact">
+    <div class="contact-form-container">
+        <div id="form-wrapper">
+            <span class="contact-form-label">Get In Touch</span>
+            <h2 class="contact-form-title">Let's Find Your Next Great Match</h2>
+            <p class="contact-form-subtext">Whether you're hiring or looking for your next opportunity — fill in your details and our team will reach out within 24 hours.</p>
+
+            <form id="contact-form">
+                <div class="form-row">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <input type="email" placeholder="Business Email Address" required>
+                <input type="tel" placeholder="Phone Number">
+                <select required>
+                    <option value="" disabled selected>I am a...</option>
+                    <option value="employer">An Employer Looking to Hire</option>
+                    <option value="candidate">A Job Seeker</option>
+                    <option value="other">Other</option>
+                </select>
+                <button type="submit">Send My Details →</button>
+                <p class="contact-form-privacy">We respect your privacy. No spam, ever.</p>
+            </form>
+        </div>
+        <div class="form-thank-you" id="thank-you-message">
+            <div class="thank-you-checkmark">✓</div>
+            <div class="thank-you-message">Thank you! We'll be in touch within 24 hours.</div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-column">
+            <h3>Company</h3>
+            <a href="team.html">About</a>
+            <a href="#">Services</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+        </div>
+        <div class="footer-column">
+            <h3>For Job Seekers</h3>
+            <a href="#">Find a Job</a>
+            <a href="#">Submit Resume</a>
+            <a href="#">Job Alerts</a>
+            <a href="#">Career Resources</a>
+        </div>
+        <div class="footer-column">
+            <h3>For Employers</h3>
+            <a href="#">Hire a Candidate</a>
+            <a href="#">Our Process</a>
+            <a href="#">Specialties</a>
+            <a href="#">Request a Quote</a>
+        </div>
+        <div class="footer-column locations">
+            <h3>Locations</h3>
+            <div style="display:flex;align-items:flex-start;">
+                <svg viewBox="0 0 24 24" fill="#36DB64" width="14" height="14" style="margin-right:6px;flex-shrink:0;margin-top:2px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>New York HQ · 155 Pinelawn Rd Suite 130 South · Melville NY 11747</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;margin-top:0.5rem;">
+                <svg viewBox="0 0 24 24" fill="#36DB64" width="14" height="14" style="margin-right:6px;flex-shrink:0;margin-top:2px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Florida Office · 7501 Wiles Rd Suite 207 · Coral Springs FL 33076</span>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <a href="tel:6312594311" style="display:flex;align-items:center;color:inherit;text-decoration:none;">
+                <svg viewBox="0 0 24 24" fill="#36DB64" width="16" height="16" style="margin-right:8px;flex-shrink:0;vertical-align:middle;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>631-259-4311</span>
+            </a>
+            <a href="mailto:info@engagestaff.com">info@engagestaff.com</a>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/engage-partners-inc-/" target="_blank" class="social-icon" title="LinkedIn" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;min-height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:white;text-decoration:none;box-sizing:border-box;overflow:hidden;flex-shrink:0;padding:0;line-height:1;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="display:block;flex-shrink:0;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/engagepartners/" target="_blank" class="social-icon" title="Facebook" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;min-height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:white;text-decoration:none;box-sizing:border-box;overflow:hidden;flex-shrink:0;padding:0;line-height:1;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="display:block;flex-shrink:0;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/engagepartnersinc/" target="_blank" class="social-icon" title="Instagram" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;min-height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:white;text-decoration:none;box-sizing:border-box;overflow:hidden;flex-shrink:0;padding:0;line-height:1;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="display:block;flex-shrink:0;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/user/EngagePartners" target="_blank" class="social-icon" title="YouTube" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;min-height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:white;text-decoration:none;box-sizing:border-box;overflow:hidden;flex-shrink:0;padding:0;line-height:1;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="display:block;flex-shrink:0;"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+                </a>
+                <a href="https://x.com/engage_partners" target="_blank" class="social-icon" title="X" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;min-height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:white;text-decoration:none;box-sizing:border-box;overflow:hidden;flex-shrink:0;padding:0;line-height:1;">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="display:block;flex-shrink:0;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.738-8.835L1.254 2.25H8.08l4.259 5.632 5.905-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wordmark">ENGAGE</div>
+    <div class="footer-bottom">
+        <div class="footer-bottom-left">© 2026 Engage Partners, Inc. All rights reserved.</div>
+        <div class="footer-bottom-right">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // SCROLL PROGRESS BAR
+    const scrollProgressBar = document.querySelector('.scroll-progress-bar');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgressBar.style.width = scrollPercent + '%';
+    });
+
+    // NAVIGATION WITH MEGA MENU
+    (function() {
+        var nav = document.getElementById('main-nav');
+        var navLinks = document.querySelectorAll('.nav-link');
+
+        function updateNav() {
+            var scrolled = window.scrollY > 60;
+            var navPill = document.getElementById('nav-links-pill');
+
+            if (scrolled) {
+                nav.classList.add('scrolled');
+                nav.style.background = 'white';
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+                if (navPill) {
+                    navPill.style.background = 'rgba(5,39,89,0.06)';
+                    navPill.style.borderColor = 'rgba(5,39,89,0.1)';
+                }
+                navLinks.forEach(function(l) {
+                    l.style.color = '#052759';
+                });
+            } else {
+                nav.classList.remove('scrolled');
+                nav.style.background = 'transparent';
+                nav.style.boxShadow = 'none';
+                if (navPill) {
+                    navPill.style.background = 'rgba(0,0,0,0.18)';
+                    navPill.style.borderColor = 'rgba(255,255,255,0.12)';
+                }
+                navLinks.forEach(function(l) {
+                    l.style.color = 'white';
+                });
+            }
+            var activeLink = document.querySelector('.nav-link-active');
+            if (activeLink) activeLink.style.fontWeight = '700';
+        }
+
+        window.addEventListener('scroll', updateNav, { passive: true });
+        updateNav();
+
+        // Dropdown logic
+        var specialtiesTrigger = document.getElementById('specialties-trigger');
+        var specialtiesDropdown = document.getElementById('specialties-dropdown');
+        var specialtiesChevron = document.getElementById('specialties-chevron');
+        var specialtiesItem = document.getElementById('specialties-menu-item');
+
+        var servicesTrigger = document.getElementById('services-trigger');
+        var servicesDropdown = document.getElementById('services-dropdown');
+        var servicesChevron = document.getElementById('services-chevron');
+        var servicesItem = document.getElementById('services-menu-item');
+
+        function showDropdown(dropdown, chevron) {
+            dropdown.style.display = 'block';
+            dropdown.style.opacity = '0';
+            dropdown.style.transform = 'translateX(-50%) translateY(-8px)';
+            setTimeout(function() {
+                dropdown.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+                dropdown.style.opacity = '1';
+                dropdown.style.transform = 'translateX(-50%) translateY(0)';
+            }, 10);
+            chevron.style.transform = 'rotate(180deg)';
+        }
+
+        function hideDropdown(dropdown, chevron) {
+            dropdown.style.opacity = '0';
+            dropdown.style.transform = 'translateX(-50%) translateY(-8px)';
+            setTimeout(function() { dropdown.style.display = 'none'; }, 200);
+            chevron.style.transform = 'rotate(0deg)';
+        }
+
+        specialtiesItem.addEventListener('mouseenter', function() { showDropdown(specialtiesDropdown, specialtiesChevron); });
+        specialtiesItem.addEventListener('mouseleave', function() { hideDropdown(specialtiesDropdown, specialtiesChevron); });
+        servicesItem.addEventListener('mouseenter', function() { showDropdown(servicesDropdown, servicesChevron); });
+        servicesItem.addEventListener('mouseleave', function() { hideDropdown(servicesDropdown, servicesChevron); });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!specialtiesItem.contains(e.target)) hideDropdown(specialtiesDropdown, specialtiesChevron);
+            if (!servicesItem.contains(e.target)) hideDropdown(servicesDropdown, servicesChevron);
+        });
+    })();
+
+    // INTERSECTION OBSERVER FOR FADE-UP
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+        observer.observe(el);
+    });
+
+    // COUNTER ANIMATION FOR STATS
+    const countupElements = document.querySelectorAll('[data-number]');
+    let hasAnimated = false;
+
+    const animateCounters = () => {
+        if (hasAnimated) return;
+        hasAnimated = true;
+
+        countupElements.forEach(el => {
+            const target = parseInt(el.getAttribute('data-number'));
+            const duration = 1500;
+            const start = Date.now();
+
+            const animate = () => {
+                const now = Date.now();
+                const progress = Math.min((now - start) / duration, 1);
+                const current = Math.floor(progress * target);
+                el.textContent = current + (el.textContent.includes('+') ? '+' : '');
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            };
+
+            animate();
+        });
+    };
+
+    const statsSection = document.querySelector('#stats');
+    const statsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            animateCounters();
+            statsObserver.unobserve(statsSection);
+        }
+    }, { threshold: 0.5 });
+
+    statsObserver.observe(statsSection);
+
+    // CONTACT FORM SUBMISSION
+    const contactForm = document.getElementById('contact-form');
+    const formWrapper = document.getElementById('form-wrapper');
+    const thankYouMessage = document.getElementById('thank-you-message');
+
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        formWrapper.style.display = 'none';
+        thankYouMessage.classList.add('show');
+    });
+
+    // SMOOTH SCROLL LINKS
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && document.querySelector(href)) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
